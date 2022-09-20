@@ -1,60 +1,93 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-}
-
-:root {
-    --ceil-size: 100px;
-    --mark-size: calc(var(--cell-size) * .9)
-}
-
 body{
-    margin: 0;
+    margin: 0px;
+    background-color: aqua;
 }
 
-.board {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3,auto);
-}
-
-.cell {
-    width: var(--ceil-size);
-    height: var(--ceil-size);
+.title{
+    text-align: center 
     
-    border: 1px solid black;
-    display: flex;
+}
+
+form {
+   
+    text-align: center;
+    margin: 100px 0;
+    padding: 50px;
+    
+}
+
+input{
+    border-radius: 20px;
+    width: 15%;
+    height: 30px;
+}
+
+span{
+    color: red;
+}
+
+button{
+    border-radius: 20px;
+    width: 100px;
+    margin-left: 200px;
+}
+
+button:hover {
+    background-color: rgb(14, 57, 215);
+}
+
+button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.form{
+    display:block ;
+}
+
+.game{
+    display: none ;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    
 }
 
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
-    border-top: none;
+.charaf{
+    z-index: 0;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: relative;
+    
 }
 
-.cell:nth-child(3n + 1){
-    border-left: none;
-}
 
-.cell:nth-child(3n + 3){
-    border-right: none;
-}
 
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7) {
-    border-bottom: none;
-}
+.grid-container {
+    margin-top: 150px;
 
-.cell.x::before,
-.cell.x::after {
-    content: '';
-    width: cal(var(--mark-size) * .15);
-    height: var(--mark-size);
+    z-index: 1;
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    padding: 10px;
+    width: 15%;
+    
+  }
+  .grid-item {
+    /* background-color: rgb(255, 255, 255); */
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+  }
+
+.square{
+    background-color: bisque;
+    width: 10%;
+    
 }

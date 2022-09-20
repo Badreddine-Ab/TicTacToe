@@ -6,27 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
-    
-    <title>Document</title>
+    <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <div class="board" id="board">
-        <div class="cell x" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
-        <div class="cell" date-cell></div>
+    <header class="title">
+        <h1>Welcome To Tic-Tac-Toe made by Badr</h1>
+    </header>
+    <section class="form">
+        <form id="form">
+            <div>
+                <label for="First Player"> Player 1 : </label>
+                <input id="name1" type="text">
+                
+            </div>
+            <span id="error1"></span>
+            <br>
+            <br>
+            <div>
+                <label for="First Player"> Player 2 : </label>
+                <input id="name2" type="text">
+               
+            </div>
+            <span id="error2"></span>
+            <br>
+            <br>
+            <button>Submit</button>
+            
+        </form>
+    </section>
+   
+    <section class="game">
+        <div class="container">
+           <img class="charaf" src="./WhatsApp Image 2022-09-20 at 14.17.45.jpeg" alt="Charaf">
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>  
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>  
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>  
+          </div>
+    </section>
 
-    </div>
 
-    <div class="winning-message">
-        <div data-winning-message-text=""></div>
-        <button id="restartButton"> Restart</button>
-    </div>
 
 </body>
 </html>
