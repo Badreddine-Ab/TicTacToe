@@ -32,14 +32,18 @@ const square = document.querySelector('.grid-item')
 let points1 = 0
 let points2 = 0
 let error = false
+
+let scores = {
+  score1 : 0,
+  score2 : 0
+}
+
 let Players = {
     player1 : '',
     player2 : ''
 }
 
-form.addEventListener('submit', (e) => {
-    
-    
+form.addEventListener('submit', (e) => {    
     if(!name1.value ){
         error1.innerText = 'Please enter The first name'
         error = true
@@ -64,12 +68,6 @@ form.addEventListener('submit', (e) => {
         let namesLoacl = JSON.parse(localStorage.getItem('Players'))
         console.log(namesLoacl)
 
-        // player1.innerText = namesLoacl.player1.toLowerCase()
-        // player2.innerText = namesLoacl.player2.toLowerCase()
-        // point1.innerText = points1
-        // point2.innerText = points2
-
-
         section1.style.display = 'none'
         section2.style.display = 'block'
        
@@ -78,20 +76,6 @@ form.addEventListener('submit', (e) => {
         e.preventDefault();
     
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 startGame()
@@ -116,6 +100,7 @@ function handleClick(e) {
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     endGame(false)
+
   } else if (isDraw()) {
     endGame(true)
   } else {
@@ -128,7 +113,9 @@ function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!'
   } else {
+    
     winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+    
   }
   winningMessageElement.classList.add('show')
 }
@@ -164,3 +151,7 @@ function checkWin(currentClass) {
     })
   })
 }
+
+// function CalculateWinner(){
+//   if( winningMessageTextElement.innerText == 'O's Winns! ')
+// }
